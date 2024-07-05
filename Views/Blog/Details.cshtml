@@ -1,0 +1,66 @@
+﻿@model BlogMVCApp.Models.Blog
+
+
+        <h1>@Model.Baslik</h1>
+        <hr />
+        <p>
+            <span class="glyphicon glyphicon-time"></span>
+            @Model.EklenmeTarihi
+        </p>
+        <hr />
+        <img class="img-responsive" src="http://placehold.it/900x300" alt="" />
+        <hr />
+        <blockquote>
+            <p>@Model.Aciklama</p>
+        </blockquot>
+            <p>
+                @Model.Icerik
+            </p>
+            <div class="comment">
+                <div class="well">
+                    <h4>Yorum Yap</h4>
+                    <form role="form">
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Kaydet</button>
+                    </form>
+                </div>
+                <hr />
+                <div class="media">
+                    <div class="media-left">
+                        <img src="img_avatar1.png" class="media-object" style="width:60px">
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">John Doe</h4>
+                        <p>lskdjfşlajdfjkalşfjaşlfjaljkdfşlaksjdflakjflakjflajkdfkljaflkja</p>
+                    </div>
+                </div>
+                <div class="media">
+                    <div class="media-left">
+                        <img src="img_avatar1.png" class="media-object" style="width:60px">
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">John Doe</h4>
+                        <p>dşfkaşfkjaşldfjkaşlkfjaşlkjdfaşlkjfşlakdfjalkjfşaldkj</p>
+                    </div>
+                </div>
+            </div>
+
+            @section sagkolon
+            {
+
+                <div class="well">
+                    <h4>Blog Search</h4>
+                    <div class="input-group">
+                        <input type="text" class="form-control" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                @{Html.RenderAction("KategoriListesi", "Category"); }
+            }
+
